@@ -1,5 +1,5 @@
 import React from 'react';
-import notFound from '../../Images/not_found.png';
+import notFound from '../../../Images/not_found.png';
 import { Container, Row, Col } from 'react-bootstrap';
 import style from './NotFound.module.css';
 

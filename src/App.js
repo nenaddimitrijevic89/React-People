@@ -2,83 +2,20 @@ import React from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 import 'materialize-css/dist/js/materialize';
 import './App.css';
-import { fetchUsers } from './Data/fetch';
-import { Header } from './Components/Header/Header';
-import { Users } from './Components/Users/Users';
-import { Footer } from './Components/Footer/Footer';
-import { Search } from './Components/Search/Search';
+import { Route, Switch } from 'react-router-dom';
+import { HomePage } from './Components/HomePage/HomePage';
+import { AboutPage } from './Components/AboutPage/AboutPage';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
 
-    this.onLayoutChange = this.onLayoutChange.bind(this);
-    this.state = {
-      isListView: true,
-      users: [],
-      filteredUsers: [],
-      inputValue: "",
-      isLoading: false,
-      timeAgo: ""
-    }
-  }
-
-  componentDidMount() {
-    const savedUsers = localStorage.getItem("users");
-    const viewMode = localStorage.getItem("isListView");
-    if (!savedUsers) {
-      this.getUsers()
-    } else {
-      this.setState({
-        users: JSON.parse(savedUsers),
-        filteredUsers: JSON.parse(savedUsers)
-      })
-      this.setState({ isListView: JSON.parse(viewMode) })
-    }
-
-  }
-
-  getUsers = () => {
-    this.setState({ isLoading: true });
-
-    fetchUsers()
-      .then(data => {
-        this.setState({ users: data.results, filteredUsers: data.results, inputValue: '', timeAgo: new Date() },
-          () => {
-            localStorage.setItem("users", JSON.stringify(data.results))
-          })
-      })
-      .finally(() => this.setState({ isLoading: false }));
-  }
-
-  searchedUsers = (textInput) => {
-    const newUsers = this.state.users.filter(user => {
-      return user.name.first.toLowerCase().includes(textInput.toLowerCase()) || user.name.last.toLowerCase().includes(textInput.toLowerCase())
-    });
-    this.setState({
-      inputValue: textInput,
-      filteredUsers: newUsers
-    })
-  }
-
-  onLayoutChange() {
-    this.setState({ isListView: !this.state.isListView },
-      () => {
-        localStorage.setItem("isListView", JSON.stringify(this.state.isListView))
-      })
-  }
-
-  render() {
-
-    return (
-      <div className="wrapper">
-        <Header isList={this.state.isListView} onLayoutChange={this.onLayoutChange} updateUsers={() => this.getUsers()} />
-        <Search searchedUsers={this.searchedUsers} users={this.state.users} inputValue={this.state.inputValue} />
-        <Users isList={this.state.isListView} users={this.state.filteredUsers} isLoading={this.state.isLoading} />
-        <Footer time={this.state.timeAgo} />
-      </div >
-    );
-  }
+const App = () => {
+  return (
+    <div>
+      <Switch>
+        <Route exact path='/' component={HomePage} />
+        <Route exact path='/about' component={AboutPage} />
+      </Switch>
+    </div>
+  )
 }
 
 export default App;
