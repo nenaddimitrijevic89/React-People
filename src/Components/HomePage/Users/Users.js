@@ -1,6 +1,6 @@
 import React from 'react';
-import { ListUser } from '../ListUser/ListUser';
-import { GridUser } from '../GridUser/GridUser';
+import { ListUser } from './ListUser/ListUser';
+import { GridUser } from './GridUser/GridUser';
 import './Users.css';
 import { Container, Row } from 'react-bootstrap';
 import { Loading } from '../Loading/Loading';

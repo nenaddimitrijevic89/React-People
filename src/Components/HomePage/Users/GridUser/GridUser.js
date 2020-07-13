@@ -1,5 +1,5 @@
 import React from 'react';
-import { hideEmail } from '../../Functions/functions';
+import { hideEmail } from '../../../../Functions/functions';
 import './GridUser.css';
 import { Card, Col } from 'react-bootstrap';
 

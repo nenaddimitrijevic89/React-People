@@ -1,6 +1,6 @@
 import React from 'react';
 import './ListUser.css';
-import { hideEmail } from '../../Functions/functions';
+import { hideEmail } from '../../../../Functions/functions';
 import { Col } from 'react-bootstrap';
 
 const ListUser = ({ dob, img, name, email, last, gender }) => {
