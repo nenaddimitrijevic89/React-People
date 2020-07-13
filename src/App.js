@@ -50,6 +50,7 @@ class App extends React.Component {
       })
       .finally(() => this.setState({ isLoading: false }));
   }
+
   searchedUsers = (textInput) => {
     const newUsers = this.state.users.filter(user => {
       return user.name.first.toLowerCase().includes(textInput.toLowerCase()) || user.name.last.toLowerCase().includes(textInput.toLowerCase())
@@ -74,7 +75,6 @@ class App extends React.Component {
         <Header isList={this.state.isListView} onLayoutChange={this.onLayoutChange} updateUsers={() => this.getUsers()} />
         <Search searchedUsers={this.searchedUsers} users={this.state.users} inputValue={this.state.inputValue} />
         <Users isList={this.state.isListView} users={this.state.filteredUsers} isLoading={this.state.isLoading} />
-        <div className="push"></div>
         <Footer time={this.state.timeAgo} />
       </div >
     );

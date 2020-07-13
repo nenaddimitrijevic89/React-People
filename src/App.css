@@ -1,12 +1,3 @@
 * {
     font-family: 'Iceland', cursive;
 }
-
-.wrapper {
-    min-height: 100%;
-    margin-bottom: -70px;
-}
-
-.push {
-    height: 70px;
-}
