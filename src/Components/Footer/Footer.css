@@ -4,6 +4,10 @@
     box-shadow: 0px 1px 7px 2px #534f4f;
 }
 
+.footer__margin{
+    margin-bottom: 0px !important;
+}
+
 .footer:hover {
     box-shadow: 0px 1px 7px 2px black;
 }
@@ -20,3 +24,12 @@
     text-align: end;
     padding-right: 0px !important;
 }
+
+@media only screen and (max-width: 992px) {
+    .footer__info{
+        display: none;
+    }
+    .footer__time{
+        text-align: center;
+    }
+  }

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import style from './Header.module.css';
-import { Navbar, Icon, NavItem } from 'react-materialize';
+import { Navbar, NavItem } from 'react-materialize';
 
 
 const Header = ({ isList, onLayoutChange, updateUsers }) => {
@@ -12,7 +12,7 @@ const Header = ({ isList, onLayoutChange, updateUsers }) => {
             brand={<a className="brand-logo">React People</a>}
             centerChildren
             id="mobile-nav"
-            menuIcon={<Icon>menu</Icon>}
+            menuIcon={<><div className={style.menu}></div><div className={style.menu}></div><div className={style.menu}></div></>}
             options={{
                 draggable: true,
                 edge: 'left',

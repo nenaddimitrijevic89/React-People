@@ -6,3 +6,14 @@
 .icon {
     font-size: 25px;
 }
+
+.menu{
+    width: 35px;
+    height: 5px;
+    background-color:white;
+    margin: 6px 0;
+}
+      
+.menu:first-child{
+    margin-top: 15px ;
+}

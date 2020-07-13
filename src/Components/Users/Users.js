@@ -10,6 +10,7 @@ import { GenderCounter } from '../GenderCounter/GenderCounter';
 
 class Users extends React.Component {
 
+
     render() {
         if (this.props.isLoading) {
             return <Loading />
@@ -17,16 +18,20 @@ class Users extends React.Component {
         if (!this.props.users.length) {
             return <NotFound />
         }
+        let usersGrid = '';
+        if (!this.props.isList) {
+            usersGrid = 'usersGrid';
+        }
 
         return (
             <div>
                 <Container>
-                    <Row>
+                    <Row className='rowMargin'>
                         <GenderCounter users={this.props.users} />
                     </Row>
                 </Container>
-                <Container className="users">
-                    <Row>
+                <Container className={`users ${usersGrid}`}>
+                    <Row className='rowMargin'>
                         {this.props.users.map((user, i) => {
                             if (this.props.isList) {
                                 return (
