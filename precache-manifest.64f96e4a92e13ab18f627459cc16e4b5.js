@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1d2fb0c3adef2887767056733a233520",
+    "revision": "c84bedc897c8e7964397bddceada7508",
     "url": "/react-bit-people/index.html"
   },
   {
-    "revision": "9a5a9d254c69605b43bd",
+    "revision": "84b17dc3263f3c479c66",
     "url": "/react-bit-people/static/css/2.0732034e.chunk.css"
   },
   {
-    "revision": "c91ee12c48cb4f793fc2",
+    "revision": "47814779f6c2951ee1ff",
     "url": "/react-bit-people/static/css/main.96ba2b4c.chunk.css"
   },
   {
-    "revision": "9a5a9d254c69605b43bd",
-    "url": "/react-bit-people/static/js/2.adc3cf49.chunk.js"
+    "revision": "84b17dc3263f3c479c66",
+    "url": "/react-bit-people/static/js/2.ea09d92c.chunk.js"
   },
   {
     "revision": "8debe1713c30c1c8fa79b57451984727",
-    "url": "/react-bit-people/static/js/2.adc3cf49.chunk.js.LICENSE.txt"
+    "url": "/react-bit-people/static/js/2.ea09d92c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c91ee12c48cb4f793fc2",
-    "url": "/react-bit-people/static/js/main.d2701148.chunk.js"
+    "revision": "47814779f6c2951ee1ff",
+    "url": "/react-bit-people/static/js/main.afa0b0ca.chunk.js"
   },
   {
     "revision": "c908fa419fcf8bcb7502",
