@@ -8,13 +8,12 @@ const Footer = ({ time }) => {
         <Container fluid className="footer" >
             <Container >
                 <Row className='footer__margin'>
-                    <Col className="footer__info" lg={9}> <h5 >&copy; 2020 Copyright BIT</h5></Col>
+                    <Col className="footer__info" lg={9}> <h5 >&copy; 2020 Copyright Nenad</h5></Col>
                     <Col lg={3} className="footer__time"><h5 >Last update: <TimeAgo
                         datetime={time} />
                     </h5></Col>
 
                 </Row>
-
             </Container>
         </Container>
     )

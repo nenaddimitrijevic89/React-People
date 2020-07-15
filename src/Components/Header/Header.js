@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import style from './Header.module.css';
 import { Navbar, NavItem } from 'react-materialize';
+import { Link } from 'react-router-dom';
 
 
-const Header = ({ isList, onLayoutChange, updateUsers }) => {
+const Header = ({ isHomePage, isList, onLayoutChange, updateUsers }) => {
     return (
         <Navbar
             className={style.header}
@@ -25,15 +26,24 @@ const Header = ({ isList, onLayoutChange, updateUsers }) => {
                 preventScrolling: true
             }}
         >
-            <NavItem onClick={updateUsers}>
-                <i className='fa fa-refresh'></i>
-            </NavItem>
-            <NavItem>
-                {isList
-                    ? <i className="fa fa-th-large" onClick={onLayoutChange}></i>
-                    : <i className="fa fa-list" onClick={onLayoutChange}></i>
-                }
-            </NavItem>
+            {isHomePage
+                ? <div className={style.flex}><Link to='/about'><NavItem>
+                    <span className={style.link}>About</span>
+                </NavItem></Link>
+                    <NavItem onClick={updateUsers}>
+                        <i className='fa fa-refresh'></i>
+                    </NavItem>
+                    <NavItem>
+                        {isList
+                            ? <i className="fa fa-th-large" onClick={onLayoutChange}></i>
+                            : <i className="fa fa-list" onClick={onLayoutChange}></i>
+                        }
+                    </NavItem></div>
+                : <Link to='/'><NavItem>
+                    <span className={style.link}>React People</span>
+                </NavItem></Link>
+
+            }
         </Navbar>
 
 

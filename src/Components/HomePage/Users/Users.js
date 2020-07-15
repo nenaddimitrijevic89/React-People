@@ -37,11 +37,11 @@ class Users extends React.Component {
                                 return (
                                     <ListUser
                                         key={i}
-                                        img={user.picture.thumbnail}
-                                        name={user.name.first}
+                                        img={user.thumbImg}
+                                        name={user.firstName}
                                         email={user.email}
-                                        dob={user.dob.date}
-                                        last={user.name.last}
+                                        dob={user.dob}
+                                        last={user.lastName}
                                         gender={user.gender}
                                     />
                                 )
@@ -51,10 +51,10 @@ class Users extends React.Component {
                                 <GridUser
                                     key={i}
                                     gender={user.gender}
-                                    img={user.picture.large}
-                                    name={user.name.first}
+                                    img={user.largeImg}
+                                    name={user.firstName}
                                     email={user.email}
-                                    dob={user.dob.date}
+                                    dob={user.dob}
                                     gender={user.gender}
                                 />
                             )
