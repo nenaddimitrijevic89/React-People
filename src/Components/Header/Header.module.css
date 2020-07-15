@@ -17,3 +17,19 @@
 .menu:first-child{
     margin-top: 15px ;
 }
+.flex{
+    display: flex;
+}
+
+.link{
+    color: white;
+}
+@media only screen and (max-width: 992px) {
+   .link{
+       color: rgb(143, 142, 142);
+   }
+   .flex{
+       flex-direction: column;
+       padding-left: 15px;
+   }
+  }

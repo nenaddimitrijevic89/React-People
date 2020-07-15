@@ -1,9 +1,10 @@
 import React from 'react';
-import { fetchUsers } from '../../Data/fetch';
+import { fetchUsers } from '../../services/fetch';
 import { Header } from '../Header/Header';
 import { Users } from '../HomePage/Users/Users';
 import { Footer } from '../Footer/Footer';
 import { Search } from '../HomePage/Search/Search';
+import { storageService } from '../../services/StorageService';
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -21,18 +22,17 @@ class HomePage extends React.Component {
     }
 
     componentDidMount() {
-        const savedUsers = localStorage.getItem("users");
-        const viewMode = localStorage.getItem("isListView");
+        const savedUsers = storageService.get("users");
+        const viewMode = storageService.get("isListView");
         if (!savedUsers) {
             this.getUsers()
         } else {
             this.setState({
-                users: JSON.parse(savedUsers),
-                filteredUsers: JSON.parse(savedUsers)
+                users: savedUsers,
+                filteredUsers: savedUsers
             })
-            this.setState({ isListView: JSON.parse(viewMode) })
+            this.setState({ isListView: viewMode })
         }
-
     }
 
     getUsers = () => {
@@ -40,9 +40,9 @@ class HomePage extends React.Component {
 
         fetchUsers()
             .then(data => {
-                this.setState({ users: data.results, filteredUsers: data.results, inputValue: '', timeAgo: new Date() },
+                this.setState({ users: data, filteredUsers: data, inputValue: '', timeAgo: new Date() },
                     () => {
-                        localStorage.setItem("users", JSON.stringify(data.results))
+                        storageService.set("users", data)
                     })
             })
             .finally(() => this.setState({ isLoading: false }));
@@ -50,7 +50,7 @@ class HomePage extends React.Component {
 
     searchedUsers = (textInput) => {
         const newUsers = this.state.users.filter(user => {
-            return user.name.first.toLowerCase().includes(textInput.toLowerCase()) || user.name.last.toLowerCase().includes(textInput.toLowerCase())
+            return user.firstName.toLowerCase().includes(textInput.toLowerCase()) || user.lastName.toLowerCase().includes(textInput.toLowerCase())
         });
         this.setState({
             inputValue: textInput,
@@ -61,7 +61,7 @@ class HomePage extends React.Component {
     onLayoutChange() {
         this.setState({ isListView: !this.state.isListView },
             () => {
-                localStorage.setItem("isListView", JSON.stringify(this.state.isListView))
+                storageService.set("isListView", this.state.isListView)
             })
     }
 
@@ -69,7 +69,7 @@ class HomePage extends React.Component {
 
         return (
             <div>
-                <Header isList={this.state.isListView} onLayoutChange={this.onLayoutChange} updateUsers={() => this.getUsers()} />
+                <Header isHomePage={true} isList={this.state.isListView} onLayoutChange={this.onLayoutChange} updateUsers={() => this.getUsers()} />
                 <Search searchedUsers={this.searchedUsers} users={this.state.users} inputValue={this.state.inputValue} />
                 <Users isList={this.state.isListView} users={this.state.filteredUsers} isLoading={this.state.isLoading} />
                 <Footer time={this.state.timeAgo} />
