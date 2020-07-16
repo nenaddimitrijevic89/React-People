@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/React-People/static/css/main.43b9b80f.chunk.css",
-    "main.js": "/React-People/static/js/main.2049932e.chunk.js",
-    "main.js.map": "/React-People/static/js/main.2049932e.chunk.js.map",
+    "main.css": "/React-People/static/css/main.04baa97b.chunk.css",
+    "main.js": "/React-People/static/js/main.17def477.chunk.js",
+    "main.js.map": "/React-People/static/js/main.17def477.chunk.js.map",
     "runtime-main.js": "/React-People/static/js/runtime-main.eb1a16c0.js",
     "runtime-main.js.map": "/React-People/static/js/runtime-main.eb1a16c0.js.map",
     "static/css/2.0732034e.chunk.css": "/React-People/static/css/2.0732034e.chunk.css",
     "static/js/2.43b2048f.chunk.js": "/React-People/static/js/2.43b2048f.chunk.js",
     "static/js/2.43b2048f.chunk.js.map": "/React-People/static/js/2.43b2048f.chunk.js.map",
     "index.html": "/React-People/index.html",
-    "precache-manifest.f20bcf5a3039540f528998aa4c1e6bb3.js": "/React-People/precache-manifest.f20bcf5a3039540f528998aa4c1e6bb3.js",
+    "precache-manifest.cb7d3847e9843cd1e8f0015a6a187904.js": "/React-People/precache-manifest.cb7d3847e9843cd1e8f0015a6a187904.js",
     "service-worker.js": "/React-People/service-worker.js",
     "static/css/2.0732034e.chunk.css.map": "/React-People/static/css/2.0732034e.chunk.css.map",
-    "static/css/main.43b9b80f.chunk.css.map": "/React-People/static/css/main.43b9b80f.chunk.css.map",
+    "static/css/main.04baa97b.chunk.css.map": "/React-People/static/css/main.04baa97b.chunk.css.map",
     "static/js/2.43b2048f.chunk.js.LICENSE.txt": "/React-People/static/js/2.43b2048f.chunk.js.LICENSE.txt",
     "static/media/not_found.png": "/React-People/static/media/not_found.74262339.png"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.eb1a16c0.js",
     "static/css/2.0732034e.chunk.css",
     "static/js/2.43b2048f.chunk.js",
-    "static/css/main.43b9b80f.chunk.css",
-    "static/js/main.2049932e.chunk.js"
+    "static/css/main.04baa97b.chunk.css",
+    "static/js/main.17def477.chunk.js"
   ]
 }
