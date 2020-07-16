@@ -11,10 +11,10 @@ Each list and grid item displays:
 * Email icon and hidden email address
 * Birth date in DD.MM.YYYY format
 
-Preview: [React People](https://nenaddimitrijevic89.github.io/React-People/)
+Demo: [React People](https://nenaddimitrijevic89.github.io/React-People/)
 
 ## Stack
 
-* Languages: HTML5, CSS3, JS(ES6)
+* Languages: HTML5, CSS3, JavaScript (ES6)
 * Libraries: React, Materialize, Bootstrap
 * Package Manager: npm

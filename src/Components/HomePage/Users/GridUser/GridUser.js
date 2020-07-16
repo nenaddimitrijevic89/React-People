@@ -10,7 +10,7 @@ const GridUser = ({ dob, img, name, email, gender }) => {
     const d = dateOfBirth.getDate();
 
     return (
-        <Col className="griduser" lg={4}>
+        <Col className="griduser" lg={4} md={6} sm={12}>
             <Card style={{ width: '' }} className="a">
                 <Card.Img variant="top" src={img} alt={name} />
                 <Card.Body className={`${gender === "female" ? 'female' : ''}`}>
