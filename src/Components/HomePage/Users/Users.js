@@ -4,7 +4,6 @@ import { GridUser } from './GridUser/GridUser';
 import './Users.css';
 import { Container, Row } from 'react-bootstrap';
 import { Loading } from '../Loading/Loading';
-import { NotFound } from '../NotFound/NotFound';
 import { GenderCounter } from '../GenderCounter/GenderCounter';
 
 
@@ -16,7 +15,11 @@ class Users extends React.Component {
             return <Loading />
         }
         if (!this.props.users.length) {
-            return <NotFound />
+            return <Container>
+                <Row>
+                    <h4 className='textCenter'>Sorry, that user is not in our system &#x1F610;</h4>
+                </Row>
+            </Container>
         }
         let usersGrid = '';
         if (!this.props.isList) {

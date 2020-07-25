@@ -66,7 +66,6 @@ class HomePage extends React.Component {
     }
 
     render() {
-
         return (
             <div>
                 <Header isHomePage={true} isList={this.state.isListView} onLayoutChange={this.onLayoutChange} updateUsers={() => this.getUsers()} />
