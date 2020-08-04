@@ -12,7 +12,6 @@ const Footer = ({ time }) => {
                     <Col lg={3} className="footer__time"><h5 >Last update: <TimeAgo
                         datetime={time} />
                     </h5></Col>
-
                 </Row>
             </Container>
         </Container>
